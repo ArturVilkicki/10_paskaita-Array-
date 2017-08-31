@@ -25,7 +25,18 @@
 			Rezultatas: <br/>
 			<?php
 			if (isset($_POST['arg1']) && isset($_POST['arg2'])) {
-				//echo $_POST['arg1'] + $_POST['arg2'];
+				if (value=="sum") {
+					echo $_POST['arg1'] + $_POST['arg2'];
+				}
+				if (value=="ded") {
+					echo $_POST['arg1'] - $_POST['arg2'];
+				}
+				if (value=="mult") {
+					echo $_POST['arg1'] * $_POST['arg2'];
+				}
+				if (value=="div") {
+					echo $_POST['arg1'] / $_POST['arg2'];
+				}//echo $_POST['arg1'] + $_POST['arg2'];
 				//atliekam aritmetini veiksma, priklausomai nuo $_POST operation
 			} else {
 				echo "Nera argumentu";
