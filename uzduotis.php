@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +25,13 @@ foreach ($troskinio_sudetis as $ingredientas => $kiekis) {
 
 echo '<tr>' . '<td>' . 'Suma:' . '</td>' . '<td>' . $suma . '</td> . </tr>';
 echo "</table>";
+
+function checkWater($array){
+	if ($troskinio_sudetis['Vanduo']> $troskinio_sudetis['Pupeles']) {
+		return "Vandens yra daugiau negu pupeliu";
+	}
+}
+checkWater($troskinio_sudetis);
 ?>
 
 
