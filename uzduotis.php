@@ -26,12 +26,25 @@ foreach ($troskinio_sudetis as $ingredientas => $kiekis) {
 echo '<tr>' . '<td>' . 'Suma:' . '</td>' . '<td>' . $suma . '</td> . </tr>';
 echo "</table>";
 
-function checkWater($array){
-	if ($troskinio_sudetis['Vanduo']> $troskinio_sudetis['Pupeles']) {
-		return "Vandens yra daugiau negu pupeliu";
+function checkWater($troskinio_sudetis){
+	if (isset($troskinio_sudetis['Vanduo']) && isset($troskinio_sudetis['Pupeles'])) {
+		
+		if ($troskinio_sudetis['Vanduo'] > $troskinio_sudetis['Pupeles']) {
+		echo "Vandens yra daugiau negu pupeliu";
+		} else {
+		echo "Vandens nepakanka <br>";
+		echo "Vandens: " . $troskinio_sudetis["Vanduo"] . "<br>";
+		echo "Pupeliu: " . $troskinio_sudetis["Pupeles"] . "<br>";
+		}
+
+	} else {
+		echo "Recepte vandens arba pupeliu nera";
 	}
+	
 }
+$kugelis = [];
 checkWater($troskinio_sudetis);
+checkWater($kugelis);
 ?>
 
 
